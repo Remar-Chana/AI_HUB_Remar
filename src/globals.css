@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-error-container: #ffdad6;
+  --color-on-error: #690005;
+  --color-on-surface-variant: #c1c6d6;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-highest: #353534;
+  --color-ash: #a1a1a6;
+  --color-error: #ffb4ab;
+  --color-surface-variant: #353534;
+  --color-graphite: #0e0e0e;
+  --color-background: #131313;
+  --color-primary-container: #0071e3;
+  --color-obsidian: #000000;
+  --color-on-background: #e5e2e1;
+  --color-surface-container: #201f1f;
+  --color-cobalt-link: #0066cc;
+  --color-on-tertiary-fixed-variant: #554500;
+  --color-secondary: #a3c9ff;
+  --color-surface-tint: #abc7ff;
+  --color-outline-variant: #414753;
+  --color-on-secondary-container: #002a51;
+  --color-electric-link: #2997ff;
+  --color-inverse-primary: #005cbb;
+  --color-copper-new: #e9a35e;
+  --color-on-primary-fixed-variant: #00458f;
+  --color-on-tertiary-fixed: #221b00;
+  --color-secondary-fixed: #d3e3ff;
+  --color-carbon: #1d1d1f;
+  --color-surface-dim: #131313;
+  --color-surface-container-high: #2a2a2a;
+  --color-primary-fixed-dim: #abc7ff;
+  --color-on-primary-container: #fcfbff;
+  --color-on-secondary-fixed: #001c39;
+  --color-tertiary: #eac400;
+  --color-primary-fixed: #d7e2ff;
+  --color-porcelain: #f5f5f7;
+  --color-slate: #9b9ba1;
+  --color-on-tertiary: #3b2f00;
+  --color-tertiary-fixed-dim: #eac300;
+  --color-secondary-fixed-dim: #a3c9ff;
+  --color-optical-yellow: #ffd500;
+  --color-inverse-on-surface: #313030;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-secondary-container: #2193fb;
+  --color-steel: #333336;
+  --color-on-secondary: #00315c;
+  --color-tertiary-fixed: #ffe174;
+  --color-white: #ffffff;
+  --color-error-container: #93000a;
+  --color-surface: #131313;
+  --color-on-primary-fixed: #001b3f;
+  --color-outline: #8b919f;
+  --color-on-secondary-fixed-variant: #004882;
+  --color-on-primary: #002f66;
+  --color-inverse-surface: #e5e2e1;
+  --color-on-tertiary-container: #4c3e00;
+  --color-primary: #abc7ff;
+  --color-tertiary-container: #caa900;
+  --color-surface-bright: #3a3939;
+  --color-on-surface: #e5e2e1;
+  --font-label-sm-strong: "Inter", sans-serif;
+  --font-headline-lg-mobile: "Inter", sans-serif;
+  --font-display-sm: "Inter", sans-serif;
+  --font-headline-lg: "Inter", sans-serif;
+  --font-headline-xl: "Inter", sans-serif;
+  --font-metric-stat: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+  --font-display-lg: "Inter", sans-serif;
+  --font-display-xl: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-title-md: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md-strong: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", sans-serif;
+  --spacing-gutter: 1rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-gutter-desktop: 1.75rem;
+  --spacing-margin: 1rem;
+  --spacing-gutter-tablet: 1.25rem;
+  --spacing-space-xl: 2rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-margin-desktop: 5.625rem;
+  --spacing-space-xs: 0.25rem;
+  --text-label-sm-strong: 12px;
+  --text-label-sm-strong--line-height: 16px;
+  --text-label-sm-strong--letter-spacing: -0.12px;
+  --text-label-sm-strong--font-weight: 600;
+  --text-headline-lg-mobile: 26px;
+  --text-headline-lg-mobile--line-height: 32px;
+  --text-headline-lg-mobile--letter-spacing: -0.26px;
+  --text-headline-lg-mobile--font-weight: 600;
+  --text-display-sm: 56px;
+  --text-display-sm--line-height: 64px;
+  --text-display-sm--letter-spacing: -0.84px;
+  --text-display-sm--font-weight: 600;
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 36px;
+  --text-headline-lg--letter-spacing: 0.128px;
+  --text-headline-lg--font-weight: 600;
+  --text-headline-xl: 40px;
+  --text-headline-xl--line-height: 44px;
+  --text-headline-xl--letter-spacing: -0.12px;
+  --text-headline-xl--font-weight: 600;
+  --text-metric-stat: 28px;
+  --text-metric-stat--line-height: 28px;
+  --text-metric-stat--letter-spacing: 0.196px;
+  --text-metric-stat--font-weight: 600;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: -0.12px;
+  --text-label-sm--font-weight: 400;
+  --text-display-lg: 80px;
+  --text-display-lg--line-height: 84px;
+  --text-display-lg--letter-spacing: -1.2px;
+  --text-display-lg--font-weight: 600;
+  --text-display-xl: 96px;
+  --text-display-xl--line-height: 100px;
+  --text-display-xl--letter-spacing: -1.44px;
+  --text-display-xl--font-weight: 600;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 18px;
+  --text-body-md--letter-spacing: -0.224px;
+  --text-body-md--font-weight: 400;
+  --text-title-md: 19px;
+  --text-title-md--line-height: 23px;
+  --text-title-md--letter-spacing: 0.228px;
+  --text-title-md--font-weight: 600;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 25px;
+  --text-body-lg--letter-spacing: -0.374px;
+  --text-body-lg--font-weight: 500;
+  --text-body-md-strong: 14px;
+  --text-body-md-strong--line-height: 18px;
+  --text-body-md-strong--letter-spacing: -0.224px;
+  --text-body-md-strong--font-weight: 600;
+  --font-mono: "JetBrains Mono", monospace;
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  html, body, #root { min-height: 100%; }
+  body { margin: 0; background: #000; font-family: Inter, sans-serif; }
+  * { box-sizing: border-box; }
+  ::selection { background: #0071e3; color: #fff; }
+  :focus-visible { outline: 2px solid #2997ff; outline-offset: 3px; }
+  .material-symbols-outlined { font-family: "Material Symbols Outlined"; font-weight: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; direction: ltr; font-feature-settings: "liga"; -webkit-font-feature-settings: "liga"; -webkit-font-smoothing: antialiased; }
+}
+
+@layer base {
+  button { min-height: 44px; }
+  :focus-visible { outline: 2px solid #2997ff; outline-offset: 3px; }
+  [id] { scroll-margin-top: 5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible { outline: 2px solid Highlight; }
+}
