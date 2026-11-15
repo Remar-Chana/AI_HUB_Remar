@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .code-scroll::-webkit-scrollbar { display: block; height: 5px; }
+    .code-scroll::-webkit-scrollbar-thumb { background: #333336; border-radius: 4px; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error-container": "#ffdad6",
+            "on-error": "#690005",
+            "on-surface-variant": "#c1c6d6",
+            "surface-container-low": "#1c1b1b",
+            "surface-container-highest": "#353534",
+            "ash": "#86868b",
+            "error": "#ffb4ab",
+            "surface-variant": "#353534",
+            "graphite": "#0e0e0e",
+            "background": "#131313",
+            "primary-container": "#0071e3",
+            "obsidian": "#000000",
+            "on-background": "#e5e2e1",
+            "surface-container": "#201f1f",
+            "cobalt-link": "#0066cc",
+            "on-tertiary-fixed-variant": "#554500",
+            "secondary": "#a3c9ff",
+            "surface-tint": "#abc7ff",
+            "outline-variant": "#414753",
+            "on-secondary-container": "#002a51",
+            "electric-link": "#2997ff",
+            "inverse-primary": "#005cbb",
+            "copper-new": "#b64400",
+            "on-primary-fixed-variant": "#00458f",
+            "on-tertiary-fixed": "#221b00",
+            "secondary-fixed": "#d3e3ff",
+            "carbon": "#1d1d1f",
+            "surface-dim": "#131313",
+            "surface-container-high": "#2a2a2a",
+            "primary-fixed-dim": "#abc7ff",
+            "on-primary-container": "#fcfbff",
+            "on-secondary-fixed": "#001c39",
+            "tertiary": "#eac400",
+            "primary-fixed": "#d7e2ff",
+            "porcelain": "#f5f5f7",
+            "slate": "#6e6e73",
+            "on-tertiary": "#3b2f00",
+            "tertiary-fixed-dim": "#eac300",
+            "secondary-fixed-dim": "#a3c9ff",
+            "optical-yellow": "#ffd500",
+            "inverse-on-surface": "#313030",
+            "surface-container-lowest": "#0e0e0e",
+            "secondary-container": "#2193fb",
+            "steel": "#333336",
+            "on-secondary": "#00315c",
+            "tertiary-fixed": "#ffe174",
+            "white": "#ffffff",
+            "error-container": "#93000a",
+            "surface": "#131313",
+            "on-primary-fixed": "#001b3f",
+            "outline": "#8b919f",
+            "on-secondary-fixed-variant": "#004882",
+            "on-primary": "#002f66",
+            "inverse-surface": "#e5e2e1",
+            "on-tertiary-container": "#4c3e00",
+            "primary": "#abc7ff",
+            "tertiary-container": "#caa900",
+            "surface-bright": "#3a3939",
+            "on-surface": "#e5e2e1"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin-tablet": "2rem",
+            "gutter-desktop": "1.75rem",
+            "margin": "1rem",
+            "gutter-tablet": "1.25rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "5.625rem",
+            "space-xs": "0.25rem"
+          },
+          fontFamily: {
+            "label-sm-strong": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "display-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "metric-stat": ["Inter"],
+            "label-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "display-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "title-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md-strong": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          fontSize: {
+            "label-sm-strong": ["12px", { lineHeight: "16px", letterSpacing: "-0.12px", fontWeight: "600" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "32px", letterSpacing: "-0.26px", fontWeight: "600" }],
+            "display-sm": ["56px", { lineHeight: "64px", letterSpacing: "-0.84px", fontWeight: "600" }],
+            "headline-lg": ["32px", { lineHeight: "36px", letterSpacing: "0.128px", fontWeight: "600" }],
+            "headline-xl": ["40px", { lineHeight: "44px", letterSpacing: "-0.12px", fontWeight: "600" }],
+            "metric-stat": ["28px", { lineHeight: "28px", letterSpacing: "0.196px", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "-0.12px", fontWeight: "400" }],
+            "display-lg": ["80px", { lineHeight: "84px", letterSpacing: "-1.2px", fontWeight: "600" }],
+            "display-xl": ["96px", { lineHeight: "100px", letterSpacing: "-1.44px", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "18px", letterSpacing: "-0.224px", fontWeight: "400" }],
+            "title-md": ["19px", { lineHeight: "23px", letterSpacing: "0.228px", fontWeight: "600" }],
+            "body-lg": ["17px", { lineHeight: "25px", letterSpacing: "-0.374px", fontWeight: "500" }],
+            "body-md-strong": ["14px", { lineHeight: "18px", letterSpacing: "-0.224px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-obsidian font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white">
+<!-- ========================================== -->
+<!-- NAVIGATION BAR                             -->
+<!-- ========================================== -->
+<header class="fixed top-0 left-0 right-0 z-50 w-full bg-graphite/90 backdrop-blur-xl border-b border-steel">
+<div class="h-14 max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md shrink-0">
+<a class="flex items-center gap-space-sm focus:outline-none" href="#">
+<img alt="AI Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB83vHTM-67z6PxZHyufZDrqoZ_2-eaFlDi1qGI7Ph6n8ulfPfNALJOlps51y0WXrsIAbdFk_u-NcX4xWCR_HGTBnOJ42DZjW25RjkcjfzBYHDTEzIIky8mQyujgTuMUOCJdDDsBcHD9W5QwpD3ePgBZr0uRJcRv0_fnvoA95-X_1qeX2fkB5yH6jUFiyUlfP6kndT6d4Sgba0aOcaO6-QwFh6KBvh0nrBm8Pn9RKpt"/>
+<span class="font-title-md text-title-md tracking-tight text-porcelain hidden sm:inline-block">AI Hub</span>
+</a>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono bg-carbon border border-steel text-ash hidden lg:inline">Workbench v2</span>
+</div>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a aria-current="page" class="transition-colors text-porcelain font-body-md-strong" href="#interactive-workbench">Playground</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-porcelain transition-colors" href="#models-matrix">Benchmarks</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-porcelain transition-colors" href="#developer-journey">Architecture</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-porcelain transition-colors" href="#agent-workflows">Workflows</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-porcelain transition-colors" href="#observability">Telemetry</a>
+</nav>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-steel text-ash font-mono text-[12px]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+<span>gateway.aihub.io</span>
+</div>
+<a class="inline-flex items-center justify-center bg-primary-container hover:bg-electric-link text-white font-body-md-strong text-body-md-strong px-space-md py-space-xs rounded-full transition-colors border border-transparent shadow-sm" href="#get-started">
+          Deploy Proxy
+        </a>
+</div>
+</div>
+</header>
+<main class="w-full pt-14 bg-obsidian min-h-screen">
+<div class="flex flex-col w-full text-porcelain selection:bg-primary-container selection:text-white">
+<!-- ========================================== -->
+<!-- 1. HERO & INTERACTIVE WORKBENCH STAGE      -->
+<!-- ========================================== -->
+<section class="relative w-full max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop pt-10 md:pt-16 pb-16 overflow-hidden" id="interactive-workbench">
+<!-- Atmospheric glow background -->
+<div class="absolute top-12 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-electric-link/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<!-- CLI Style Centered Header -->
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-10">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-carbon border border-steel mb-5 shadow-inner">
+<span class="font-mono text-emerald-400 text-xs">$</span>
+<span class="font-mono text-xs text-porcelain">curl api.aihub.io/v1/chat/completions</span>
+<span class="w-2 h-3.5 bg-electric-link inline-block animate-pulse ml-0.5"></span>
+</div>
+<h1 class="font-display-sm md:font-headline-xl lg:font-display-lg text-display-sm md:text-headline-xl lg:text-[72px] lg:leading-[76px] text-porcelain tracking-[-1.2px] mb-4 max-w-3xl">
+            One Endpoint. Zero Vendor Lock-in. <span class="bg-gradient-to-r from-porcelain via-primary-fixed-dim to-electric-link bg-clip-text text-transparent">Instant Failover</span> for Any LLM.
+          </h1>
+<p class="font-body-lg text-body-lg text-ash max-w-2xl mb-6">
+            100% OpenAI SDK compatible drop-in gateway. Route queries dynamically across 50+ models, stream comparisons simultaneously, and eliminate rate-limit downtime forever.
+          </p>
+<div class="flex flex-wrap items-center justify-center gap-3 text-ash font-mono text-xs">
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-carbon border border-steel">
+<span class="material-symbols-outlined text-[14px] text-emerald-400">check</span> 100% OpenAI SDK Parity
+            </span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-carbon border border-steel">
+<span class="material-symbols-outlined text-[14px] text-electric-link">bolt</span> Automated Fallback &lt; 35ms
+            </span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-carbon border border-steel">
+<span class="material-symbols-outlined text-[14px] text-tertiary">tune</span> Unified Token Ledger
+            </span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LIVE-TESTING PROMPT SANDBOX / WORKBENCH    -->
+<!-- ========================================== -->
+<div class="w-full max-w-5xl mx-auto rounded-[28px] bg-carbon border border-steel shadow-2xl overflow-hidden">
+<!-- Workbench Navigation / Control Header -->
+<div class="flex flex-wrap items-center justify-between px-5 py-3.5 bg-graphite border-b border-steel gap-3">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#ff5f56]/90 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-[#ffbd2e]/90 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-[#27c93f]/90 inline-block"></span>
+<span class="ml-2 font-mono text-xs text-porcelain font-semibold">Dual-Model Stream Workbench</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LIVE PROXY</span>
+</div>
+<!-- Preset prompts switch -->
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-ash text-[11px] hidden sm:inline">Scenario:</span>
+<div class="inline-flex p-1 rounded-full bg-obsidian border border-steel">
+<button class="px-3 py-0.5 rounded-full text-xs font-mono text-porcelain bg-steel" id="prompt-btn-sql" onclick="setWorkbenchPrompt('sql')">SQL Tuning</button>
+<button class="px-3 py-0.5 rounded-full text-xs font-mono text-ash hover:text-porcelain" id="prompt-btn-code" onclick="setWorkbenchPrompt('code')">Async Python</button>
+<button class="px-3 py-0.5 rounded-full text-xs font-mono text-ash hover:text-porcelain" id="prompt-btn-math" onclick="setWorkbenchPrompt('math')">Math Proof</button>
+</div>
+</div>
+</div>
+<!-- Prompt Input Bar -->
+<div class="p-5 bg-obsidian/70 border-b border-steel">
+<div class="text-[11px] font-mono text-ash mb-2 flex items-center justify-between">
+<span class="flex items-center gap-1.5 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]">terminal</span> SYSTEM PROMPT / USER INPUT
+              </span>
+<span class="text-slate">POST /v1/chat/completions (Stream: true)</span>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch gap-3">
+<div class="flex-1 bg-graphite border border-steel rounded-2xl px-4 py-3 flex items-start gap-2 focus-within:border-electric-link transition-colors">
+<span class="font-mono text-electric-link text-sm">&gt;</span>
+<textarea class="w-full bg-transparent font-mono text-sm text-porcelain resize-none focus:outline-none h-14" id="workbench-input" placeholder="Enter custom prompt to stream side-by-side...">Optimize this SQL query &amp; explain execution plan: SELECT u.id, count(o.id) FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE o.created_at &gt; NOW() - INTERVAL '30 days' GROUP BY u.id HAVING count(o.id) &gt; 5;</textarea>
+</div>
+<div class="flex sm:flex-col justify-end gap-2 shrink-0">
+<button class="px-5 py-2.5 rounded-2xl bg-primary-container hover:bg-electric-link text-white font-body-md-strong text-xs font-mono flex items-center justify-center gap-2 transition-all shadow-[0_0_18px_rgba(0,113,227,0.4)]" onclick="executeDualStream()">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span> Run Dual Stream
+                </button>
+<button class="px-3 py-2 rounded-2xl bg-graphite hover:bg-steel border border-steel text-ash hover:text-porcelain text-xs font-mono transition-colors flex items-center justify-center gap-1" onclick="clearStream()">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span> Reset
+                </button>
+</div>
+</div>
+</div>
+<!-- Side-by-Side Streaming Comparison Output Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-steel bg-carbon">
+<!-- Column 1: Anthropic Claude 3.5 Sonnet -->
+<div class="p-6 flex flex-col justify-between">
+<div>
+<!-- Model Header & Live Stream Status -->
+<div class="flex items-center justify-between pb-4 border-b border-steel/60 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container/30 border border-tertiary/40 flex items-center justify-center text-optical-yellow">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<div>
+<div class="font-body-md-strong text-porcelain text-xs flex items-center gap-1.5">
+                        anthropic/claude-3-5-sonnet
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</div>
+<span class="font-mono text-[10px] text-ash">Temp: 0.2 • Top_p: 0.95</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono bg-graphite border border-steel text-slate" id="sonnet-status">Stream Finished</span>
+</div>
+<!-- Live Stream Metrics Pill Bar -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-graphite border border-steel mb-4 text-center font-mono">
+<div>
+<div class="text-[10px] text-ash uppercase">TTFT</div>
+<div class="text-xs font-semibold text-emerald-400" id="sonnet-ttft">118 ms</div>
+</div>
+<div>
+<div class="text-[10px] text-ash uppercase">Tokens/sec</div>
+<div class="text-xs font-semibold text-porcelain" id="sonnet-tps">84.2 tps</div>
+</div>
+<div>
+<div class="text-[10px] text-ash uppercase">Cost</div>
+<div class="text-xs font-semibold text-electric-link" id="sonnet-cost">$0.0019</div>
+</div>
+</div>
+<!-- Stream Output Box -->
+<div class="p-4 rounded-xl bg-obsidian border border-steel/80 min-h-[190px] font-mono text-xs leading-relaxed text-on-surface">
+<div class="text-slate text-[10px] pb-1 border-b border-steel/40 mb-2 flex items-center justify-between">
+<span>TOKEN STREAM (#864)</span>
+<span class="text-emerald-400">200 chunk_ack</span>
+</div>
+<div class="space-y-2 text-porcelain" id="sonnet-stream-content">
+<p class="text-slate italic">-- Rewrite using pre-filtered subquery index scan:</p>
+<p class="text-emerald-400">WITH active_orders AS (<br/>  SELECT user_id, count(id) as total<br/>  FROM orders<br/>  WHERE created_at &gt; NOW() - INTERVAL '30 days'<br/>  GROUP BY user_id HAVING count(id) &gt; 5<br/>)<br/>SELECT u.id, ao.total FROM users u<br/>INNER JOIN active_orders ao ON u.id = ao.user_id;</p>
+<p class="text-ash text-[11px]">Plan: Avoids full left join table scan; leverages composite index on (created_at, user_id). Scan cost drops ~82%.</p>
+</div>
+</div>
+</div>
+<!-- Action Link -->
+<div class="pt-4 mt-4 border-t border-steel/60 flex items-center justify-between text-xs">
+<span class="font-mono text-ash text-[11px]">Tokens Used: <strong class="text-porcelain">148</strong> (in: 42, out: 106)</span>
+<button class="text-electric-link hover:underline font-mono text-[11px] flex items-center gap-1" onclick="copyStreamOutput('sonnet')">
+<span class="material-symbols-outlined text-[13px]">content_copy</span> Copy Raw JSON
+                </button>
+</div>
+</div>
+<!-- Column 2: OpenAI GPT-4o -->
+<div class="p-6 flex flex-col justify-between">
+<div>
+<!-- Model Header & Live Stream Status -->
+<div class="flex items-center justify-between pb-4 border-b border-steel/60 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary-container/20 border border-primary-container/40 flex items-center justify-center text-electric-link">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div>
+<div class="font-body-md-strong text-porcelain text-xs flex items-center gap-1.5">
+                        openai/gpt-4o
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</div>
+<span class="font-mono text-[10px] text-ash">Temp: 0.2 • Seed: 42</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono bg-graphite border border-steel text-slate" id="gpt-status">Stream Finished</span>
+</div>
+<!-- Live Stream Metrics Pill Bar -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-graphite border border-steel mb-4 text-center font-mono">
+<div>
+<div class="text-[10px] text-ash uppercase">TTFT</div>
+<div class="text-xs font-semibold text-emerald-400" id="gpt-ttft">94 ms</div>
+</div>
+<div>
+<div class="text-[10px] text-ash uppercase">Tokens/sec</div>
+<div class="text-xs font-semibold text-porcelain" id="gpt-tps">102.5 tps</div>
+</div>
+<div>
+<div class="text-[10px] text-ash uppercase">Cost</div>
+<div class="text-xs font-semibold text-electric-link" id="gpt-cost">$0.0016</div>
+</div>
+</div>
+<!-- Stream Output Box -->
+<div class="p-4 rounded-xl bg-obsidian border border-steel/80 min-h-[190px] font-mono text-xs leading-relaxed text-on-surface">
+<div class="text-slate text-[10px] pb-1 border-b border-steel/40 mb-2 flex items-center justify-between">
+<span>TOKEN STREAM (#865)</span>
+<span class="text-emerald-400">200 chunk_ack</span>
+</div>
+<div class="space-y-2 text-porcelain" id="gpt-stream-content">
+<p class="text-slate italic">-- Optimized INNER JOIN aggregate:</p>
+<p class="text-secondary-fixed">SELECT o.user_id, count(o.id) AS order_volume<br/>FROM orders o<br/>WHERE o.created_at &gt; NOW() - INTERVAL '30 DAY'<br/>GROUP BY o.user_id<br/>HAVING count(o.id) &gt; 5;</p>
+<p class="text-ash text-[11px]">Observation: Left join on `users` is redundant if `o.user_id` matches foreign keys. Eliminates join hash buffer.</p>
+</div>
+</div>
+</div>
+<!-- Action Link -->
+<div class="pt-4 mt-4 border-t border-steel/60 flex items-center justify-between text-xs">
+<span class="font-mono text-ash text-[11px]">Tokens Used: <strong class="text-porcelain">124</strong> (in: 42, out: 82)</span>
+<button class="text-electric-link hover:underline font-mono text-[11px] flex items-center gap-1" onclick="copyStreamOutput('gpt')">
+<span class="material-symbols-outlined text-[13px]">content_copy</span> Copy Raw JSON
+                </button>
+</div>
+</div>
+</div>
+<!-- Bottom Footer Bar -->
+<div class="px-6 py-3.5 bg-graphite border-t border-steel flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+<div class="flex items-center gap-2 text-ash">
+<span class="material-symbols-outlined text-[15px] text-electric-link">alt_route</span>
+<span>Proxy rule: Routing fallback order: <span class="text-porcelain">claude-3-5-sonnet &gt; gpt-4o &gt; deepseek-r1</span></span>
+</div>
+<a class="text-porcelain hover:text-electric-link font-body-md-strong flex items-center gap-1 transition-colors" href="#models-matrix">
+              Explore Full Model Matrix <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 2. QUICK SPECS COMPACT TICKER              -->
+<!-- ========================================== -->
+<section class="w-full bg-graphite border-y border-steel py-4">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 divide-y md:divide-y-0 md:divide-x divide-steel/80">
+<div class="flex items-center gap-3.5 px-3 py-1">
+<div class="w-9 h-9 rounded-xl bg-carbon border border-steel flex items-center justify-center text-electric-link shrink-0">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+<div>
+<div class="font-mono text-xs text-ash uppercase">Average Latency</div>
+<div class="font-mono text-sm md:text-base font-bold text-porcelain">14 ms <span class="text-[11px] text-emerald-400 font-normal">p95</span></div>
+</div>
+</div>
+<div class="flex items-center gap-3.5 px-3 py-1">
+<div class="w-9 h-9 rounded-xl bg-carbon border border-steel flex items-center justify-center text-emerald-400 shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<div class="font-mono text-xs text-ash uppercase">Global Uptime SLA</div>
+<div class="font-mono text-sm md:text-base font-bold text-porcelain">99.995% <span class="text-[11px] text-slate font-normal">SLA</span></div>
+</div>
+</div>
+<div class="flex items-center gap-3.5 px-3 py-1">
+<div class="w-9 h-9 rounded-xl bg-carbon border border-steel flex items-center justify-center text-optical-yellow shrink-0">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</div>
+<div>
+<div class="font-mono text-xs text-ash uppercase">Edge Locations</div>
+<div class="font-mono text-sm md:text-base font-bold text-porcelain">48 PoPs <span class="text-[11px] text-ash font-normal">Anycast</span></div>
+</div>
+</div>
+<div class="flex items-center gap-3.5 px-3 py-1">
+<div class="w-9 h-9 rounded-xl bg-carbon border border-steel flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+<div>
+<div class="font-mono text-xs text-ash uppercase">Active Models</div>
+<div class="font-mono text-sm md:text-base font-bold text-porcelain">50+ Engines <span class="text-[11px] text-emerald-400 font-normal">1 API</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 3. MODEL COMPARISON BY USE-CASE            -->
+<!-- ========================================== -->
+<section class="w-full max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-20" id="models-matrix">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-steel text-ash font-mono text-[12px] mb-3">
+<span class="material-symbols-outlined text-[14px] text-electric-link">data_object</span>
+              Model Benchmark Matrix
+            </div>
+<h2 class="font-headline-xl text-headline-xl text-porcelain">Compare &amp; Deploy by Workload</h2>
+<p class="font-body-md text-body-md text-ash mt-2 max-w-xl">
+              Inspect latency distributions, context capacity, and automated fallback routing cards tailored by specific engineering domain.
+            </p>
+</div>
+<!-- Use-Case Tabs -->
+<div class="inline-flex p-1 rounded-full bg-carbon border border-steel overflow-x-auto max-w-full">
+<button class="matrix-tab px-4 py-1.5 rounded-full text-porcelain bg-steel font-label-sm-strong text-xs whitespace-nowrap transition-all" id="tab-code" onclick="switchMatrixTab('code')">Code Synthesis</button>
+<button class="matrix-tab px-4 py-1.5 rounded-full text-ash hover:text-porcelain font-label-sm text-xs whitespace-nowrap transition-all" id="tab-reasoning" onclick="switchMatrixTab('reasoning')">Reasoning &amp; Math</button>
+<button class="matrix-tab px-4 py-1.5 rounded-full text-ash hover:text-porcelain font-label-sm text-xs whitespace-nowrap transition-all" id="tab-search" onclick="switchMatrixTab('search')">Long-Context Search</button>
+<button class="matrix-tab px-4 py-1.5 rounded-full text-ash hover:text-porcelain font-label-sm text-xs whitespace-nowrap transition-all" id="tab-vision" onclick="switchMatrixTab('vision')">Vision &amp; OCR</button>
+</div>
+</div>
+<!-- Dynamic Use-Case Cards Container -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="matrix-cards-container">
+<!-- Card 1 -->
+<div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-optical-yellow border border-tertiary-container/30 font-mono text-[11px]">Primary Leader</span>
+<span class="font-mono text-xs text-ash">$3.00 / 1M In</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-1">Claude 3.5 Sonnet</h3>
+<p class="font-mono text-xs text-slate mb-4">anthropic/claude-3-5-sonnet</p>
+<!-- Metric Benchmarks Bars -->
+<div class="space-y-3 p-4 rounded-2xl bg-graphite border border-steel mb-6">
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">HumanEval Python</span>
+<span class="text-porcelain font-bold">93.7%</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-electric-link rounded-full" style="width: 93.7%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">Throughput Speed</span>
+<span class="text-porcelain font-bold">84 tps</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-emerald-400 rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">Context Window</span>
+<span class="text-porcelain font-bold">200K tokens</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-steel/60">
+<button class="w-full py-2.5 rounded-full bg-primary-container hover:bg-electric-link text-white font-body-md-strong text-xs transition-all flex items-center justify-center gap-1.5" onclick="deployToProxy('anthropic/claude-3-5-sonnet')">
+<span class="material-symbols-outlined text-[15px]">rocket_launch</span> Deploy to Proxy
+              </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container/20 text-electric-link border border-primary-container/30 font-mono text-[11px]">Omni Engine</span>
+<span class="font-mono text-xs text-ash">$2.50 / 1M In</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-1">GPT-4o</h3>
+<p class="font-mono text-xs text-slate mb-4">openai/gpt-4o</p>
+<!-- Metric Benchmarks Bars -->
+<div class="space-y-3 p-4 rounded-2xl bg-graphite border border-steel mb-6">
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">HumanEval Python</span>
+<span class="text-porcelain font-bold">90.2%</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-electric-link rounded-full" style="width: 90.2%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">Throughput Speed</span>
+<span class="text-porcelain font-bold">104 tps</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-emerald-400 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">Context Window</span>
+<span class="text-porcelain font-bold">128K tokens</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-steel/60">
+<button class="w-full py-2.5 rounded-full bg-graphite hover:bg-steel border border-steel text-porcelain font-body-md-strong text-xs transition-all flex items-center justify-center gap-1.5" onclick="deployToProxy('openai/gpt-4o')">
+<span class="material-symbols-outlined text-[15px]">rocket_launch</span> Deploy to Proxy
+              </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono text-[11px]">Open Weights Edge</span>
+<span class="font-mono text-xs text-ash">$0.35 / 1M In</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-1">Llama 3.3 70B</h3>
+<p class="font-mono text-xs text-slate mb-4">meta/llama-3.3-70b-instruct</p>
+<!-- Metric Benchmarks Bars -->
+<div class="space-y-3 p-4 rounded-2xl bg-graphite border border-steel mb-6">
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">HumanEval Python</span>
+<span class="text-porcelain font-bold">85.4%</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-electric-link rounded-full" style="width: 85.4%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">Throughput Speed</span>
+<span class="text-porcelain font-bold">128 tps</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-emerald-400 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-mono mb-1">
+<span class="text-ash">Context Window</span>
+<span class="text-porcelain font-bold">128K tokens</span>
+</div>
+<div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-steel/60">
+<button class="w-full py-2.5 rounded-full bg-graphite hover:bg-steel border border-steel text-porcelain font-body-md-strong text-xs transition-all flex items-center justify-center gap-1.5" onclick="deployToProxy('meta/llama-3.3-70b')">
+<span class="material-symbols-outlined text-[15px]">rocket_launch</span> Deploy to Proxy
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 4. STEP-BY-STEP DEVELOPER JOURNEY          -->
+<!-- ========================================== -->
+<section class="w-full bg-graphite border-y border-steel py-20" id="developer-journey">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="max-w-2xl mb-14">
+<span class="font-label-sm-strong text-label-sm-strong text-electric-link uppercase tracking-wider">Zero Architecture Rewrite</span>
+<h2 class="font-headline-xl text-headline-xl text-porcelain mt-2">The 3-Step Integration Pipeline</h2>
+<p class="font-body-md text-body-md text-ash mt-3">
+              Designed as an invisible reverse proxy layer. If your application already uses OpenAI, changing one line of configuration gives you access to every LLM.
+            </p>
+</div>
+<!-- Step Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+<!-- Step 1 -->
+<div class="rounded-[28px] bg-carbon border border-steel p-7 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-4 right-5 font-mono text-3xl font-extrabold text-steel/50">01</div>
+<div>
+<div class="w-10 h-10 rounded-xl bg-graphite border border-steel flex items-center justify-center text-electric-link mb-5">
+<span class="material-symbols-outlined text-[22px]">link</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-2">Drop-in Base URL</h3>
+<p class="font-body-md text-body-md text-ash mb-4">
+                  Keep your existing OpenAI client instantiation. Replace the host URL with our regional edge gateway.
+                </p>
+<!-- Code block -->
+<div class="p-3.5 rounded-xl bg-obsidian border border-steel/80 font-mono text-[11px] text-porcelain code-scroll overflow-x-auto">
+<span class="text-ash">// Python SDK Configuration</span><br/>
+                  client = OpenAI(<br/>
+                    <span class="text-tertiary">base_url</span>=<span class="text-emerald-400">"https://api.aihub.io/v1"</span>,<br/>
+                    api_key=<span class="text-electric-link">os.getenv("AIHUB_KEY")</span><br/>
+                  )
+                </div>
+</div>
+<div class="mt-6 pt-4 border-t border-steel/60 text-xs font-mono text-slate">
+                ✓ Compatible with LangChain, LlamaIndex, Vercel AI SDK
+              </div>
+</div>
+<!-- Step 2 -->
+<div class="rounded-[28px] bg-carbon border border-steel p-7 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-4 right-5 font-mono text-3xl font-extrabold text-steel/50">02</div>
+<div>
+<div class="w-10 h-10 rounded-xl bg-graphite border border-steel flex items-center justify-center text-optical-yellow mb-5">
+<span class="material-symbols-outlined text-[22px]">alt_route</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-2">Configure Smart Fallbacks</h3>
+<p class="font-body-md text-body-md text-ash mb-4">
+                  Declare fallback priority chains directly in request headers or gateway dashboard presets to prevent 429/500 downtime.
+                </p>
+<!-- Code block -->
+<div class="p-3.5 rounded-xl bg-obsidian border border-steel/80 font-mono text-[11px] text-porcelain code-scroll overflow-x-auto">
+<span class="text-ash">// Fallback parameter header</span><br/>
+                  extra_headers={<br/>
+                    <span class="text-tertiary">"x-aihub-fallback"</span>: <span class="text-emerald-400">"claude-3-5,gpt-4o"</span>,<br/>
+                    <span class="text-tertiary">"x-aihub-timeout-ms"</span>: <span class="text-copper-new">"3500"</span><br/>
+                  }
+                </div>
+</div>
+<div class="mt-6 pt-4 border-t border-steel/60 text-xs font-mono text-slate">
+                ✓ Automatic retries across multi-cloud availability zones
+              </div>
+</div>
+<!-- Step 3 -->
+<div class="rounded-[28px] bg-carbon border border-steel p-7 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-4 right-5 font-mono text-3xl font-extrabold text-steel/50">03</div>
+<div>
+<div class="w-10 h-10 rounded-xl bg-graphite border border-steel flex items-center justify-center text-emerald-400 mb-5">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-2">Monitor Unified Analytics</h3>
+<p class="font-body-md text-body-md text-ash mb-4">
+                  Track per-request token consumption, cache hit savings, and end-to-end TTFT latency across all upstream providers.
+                </p>
+<!-- Code block -->
+<div class="p-3.5 rounded-xl bg-obsidian border border-steel/80 font-mono text-[11px] text-porcelain code-scroll overflow-x-auto">
+<span class="text-ash">// Telemetry in response headers</span><br/>
+                  X-AIHub-Upstream: <span class="text-emerald-400">anthropic.us-east-1</span><br/>
+                  X-AIHub-Latency-Route: <span class="text-electric-link">12ms</span><br/>
+                  X-AIHub-Cache: <span class="text-tertiary">HIT (semantic-sim: 0.98)</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-steel/60 text-xs font-mono text-slate">
+                ✓ Real-time webhooks, Datadog &amp; OpenTelemetry exporter
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 5. PRE-BUILT WORKFLOWS (BLUEPRINT CARDS)   -->
+<!-- ========================================== -->
+<section class="w-full max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-20" id="agent-workflows">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-steel text-ash font-mono text-[12px] mb-3">
+<span class="material-symbols-outlined text-[14px] text-electric-link">account_tree</span>
+              Workflow Wireframe Blueprints
+            </div>
+<h2 class="font-headline-xl text-headline-xl text-porcelain">Modular Autonomous Agent Blueprints</h2>
+<p class="font-body-md text-body-md text-ash mt-2 max-w-xl">
+              Connected multi-step node topologies ready for deployment. Route each stage of an agent workflow to the optimal cost/speed engine.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-carbon border border-steel hover:border-slate text-porcelain text-xs font-body-md-strong transition-all" href="#">
+<span>Open Workflow Canvas</span>
+<span class="material-symbols-outlined text-[15px]">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Blueprint 1: Code Reviewer & Security Audit -->
+<div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all relative">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-graphite border border-steel text-xs font-mono text-porcelain">Pipeline 01</span>
+<span class="text-emerald-400 font-mono text-xs">Node Chain: 3 Steps</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-2">Automated PR Auditor</h3>
+<p class="font-body-md text-body-md text-ash mb-6">
+                Parse git diffs, perform static vulnerability scan, and generate in-line security comments.
+              </p>
+<!-- Node Topology Wireframe Diagram -->
+<div class="p-4 rounded-2xl bg-graphite border border-steel space-y-3 font-mono text-xs mb-6 relative">
+<!-- Connected Node 1 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container/30 border border-electric-link flex items-center justify-center text-[10px] text-electric-link shrink-0">1</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Diff Ingest</span>
+<span class="text-porcelain font-semibold">Llama 3.3 (Fast)</span>
+</div>
+</div>
+<!-- Connector Line -->
+<div class="w-0.5 h-3 bg-steel ml-3"></div>
+<!-- Connected Node 2 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-container/30 border border-optical-yellow flex items-center justify-center text-[10px] text-optical-yellow shrink-0">2</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Security Analysis</span>
+<span class="text-porcelain font-semibold">Claude 3.5 Sonnet</span>
+</div>
+</div>
+<!-- Connector Line -->
+<div class="w-0.5 h-3 bg-steel ml-3"></div>
+<!-- Connected Node 3 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-[10px] text-emerald-400 shrink-0">3</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Inline GitHub Push</span>
+<span class="text-porcelain font-semibold">Octokit REST</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-full bg-graphite hover:bg-steel border border-steel text-porcelain text-xs font-mono transition-all flex items-center justify-center gap-2" onclick="alert('Cloning PR Auditor blueprint into your workspace...')">
+<span class="material-symbols-outlined text-[15px]">fork_right</span> Fork Blueprint
+            </button>
+</div>
+<!-- Blueprint 2: Research Synthesizer -->
+<div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all relative">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-graphite border border-steel text-xs font-mono text-porcelain">Pipeline 02</span>
+<span class="text-emerald-400 font-mono text-xs">Node Chain: 3 Steps</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-2">Deep Research Synthesizer</h3>
+<p class="font-body-md text-body-md text-ash mb-6">
+                Multi-query search retrieval, cross-source citation deduplication, and thesis generation.
+              </p>
+<!-- Node Topology Wireframe Diagram -->
+<div class="p-4 rounded-2xl bg-graphite border border-steel space-y-3 font-mono text-xs mb-6 relative">
+<!-- Connected Node 1 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container/30 border border-electric-link flex items-center justify-center text-[10px] text-electric-link shrink-0">1</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Web Crawler</span>
+<span class="text-porcelain font-semibold">Tavily / Serper API</span>
+</div>
+</div>
+<!-- Connector Line -->
+<div class="w-0.5 h-3 bg-steel ml-3"></div>
+<!-- Connected Node 2 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-container/30 border border-optical-yellow flex items-center justify-center text-[10px] text-optical-yellow shrink-0">2</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Reasoning Engine</span>
+<span class="text-porcelain font-semibold">DeepSeek R1</span>
+</div>
+</div>
+<!-- Connector Line -->
+<div class="w-0.5 h-3 bg-steel ml-3"></div>
+<!-- Connected Node 3 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-[10px] text-emerald-400 shrink-0">3</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Report Formatter</span>
+<span class="text-porcelain font-semibold">GPT-4o Markdown</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-full bg-graphite hover:bg-steel border border-steel text-porcelain text-xs font-mono transition-all flex items-center justify-center gap-2" onclick="alert('Cloning Research Synthesizer blueprint...')">
+<span class="material-symbols-outlined text-[15px]">fork_right</span> Fork Blueprint
+            </button>
+</div>
+<!-- Blueprint 3: Multimodal Extraction -->
+<div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all relative">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-graphite border border-steel text-xs font-mono text-porcelain">Pipeline 03</span>
+<span class="text-emerald-400 font-mono text-xs">Node Chain: 3 Steps</span>
+</div>
+<h3 class="font-title-md text-title-md text-porcelain mb-2">Multimodal Document OCR</h3>
+<p class="font-body-md text-body-md text-ash mb-6">
+                Parse complex invoices, receipts, and technical diagrams directly into validated JSON schemas.
+              </p>
+<!-- Node Topology Wireframe Diagram -->
+<div class="p-4 rounded-2xl bg-graphite border border-steel space-y-3 font-mono text-xs mb-6 relative">
+<!-- Connected Node 1 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container/30 border border-electric-link flex items-center justify-center text-[10px] text-electric-link shrink-0">1</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">High-Res OCR</span>
+<span class="text-porcelain font-semibold">Gemini 1.5 Pro</span>
+</div>
+</div>
+<!-- Connector Line -->
+<div class="w-0.5 h-3 bg-steel ml-3"></div>
+<!-- Connected Node 2 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-container/30 border border-optical-yellow flex items-center justify-center text-[10px] text-optical-yellow shrink-0">2</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">Zod Schema Validation</span>
+<span class="text-porcelain font-semibold">Edge Worker Node</span>
+</div>
+</div>
+<!-- Connector Line -->
+<div class="w-0.5 h-3 bg-steel ml-3"></div>
+<!-- Connected Node 3 -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-[10px] text-emerald-400 shrink-0">3</div>
+<div class="p-2 rounded-lg bg-carbon border border-steel flex-1 flex justify-between">
+<span class="text-ash">ERP Integration</span>
+<span class="text-porcelain font-semibold">Database Upsert</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-full bg-graphite hover:bg-steel border border-steel text-porcelain text-xs font-mono transition-all flex items-center justify-center gap-2" onclick="alert('Cloning Document OCR blueprint...')">
+<span class="material-symbols-outlined text-[15px]">fork_right</span> Fork Blueprint
+            </button>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 6. ENTERPRISE OBSERVABILITY COCKPIT        -->
+<!-- ========================================== -->
+<section class="w-full bg-graphite border-y border-steel py-20" id="observability">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="font-label-sm-strong text-label-sm-strong text-electric-link uppercase tracking-wider">Live Control Plane</span>
+<h2 class="font-headline-xl text-headline-xl text-porcelain mt-2">Enterprise Observability &amp; Latency Cockpit</h2>
+<p class="font-body-md text-body-md text-ash mt-2 max-w-xl">
+                Continuous tracing across upstream providers with automated error-budget alerting, semantic cache ratios, and live failover logs.
+              </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1.5 rounded-full bg-carbon border border-steel text-xs font-mono text-ash flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Buffer Sync: 240ms ago
+              </span>
+</div>
+</div>
+<!-- Master Observability Dashboard Panel -->
+<div class="w-full rounded-[28px] bg-carbon border border-steel p-6 sm:p-8 shadow-2xl">
+<!-- Dashboard Top Row: Telemetry Gauges -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="p-5 rounded-2xl bg-graphite border border-steel">
+<div class="flex items-center justify-between text-xs font-mono text-ash mb-2">
+<span>ERROR BUDGET</span>
+<span class="text-emerald-400">99.98% REMAINING</span>
+</div>
+<div class="font-metric-stat text-2xl font-bold text-porcelain">0.008%</div>
+<div class="text-[11px] text-slate font-mono mt-1">Total 5xx across 24h</div>
+</div>
+<div class="p-5 rounded-2xl bg-graphite border border-steel">
+<div class="flex items-center justify-between text-xs font-mono text-ash mb-2">
+<span>SEMANTIC CACHE</span>
+<span class="text-electric-link">ACTIVE</span>
+</div>
+<div class="font-metric-stat text-2xl font-bold text-electric-link">68.4%</div>
+<div class="text-[11px] text-ash font-mono mt-1">Saved $4,120 in upstream calls</div>
+</div>
+<div class="p-5 rounded-2xl bg-graphite border border-steel">
+<div class="flex items-center justify-between text-xs font-mono text-ash mb-2">
+<span>AUTO-FAILOVERS</span>
+<span class="text-tertiary">RESOLVED</span>
+</div>
+<div class="font-metric-stat text-2xl font-bold text-porcelain">2,840</div>
+<div class="text-[11px] text-emerald-400 font-mono mt-1">0 user impact downtime</div>
+</div>
+<div class="p-5 rounded-2xl bg-graphite border border-steel">
+<div class="flex items-center justify-between text-xs font-mono text-ash mb-2">
+<span>EDGE OVERHEAD</span>
+<span class="text-emerald-400">NOMINAL</span>
+</div>
+<div class="font-metric-stat text-2xl font-bold text-porcelain">11.8 <span class="text-xs text-ash font-normal">ms</span></div>
+<div class="text-[11px] text-slate font-mono mt-1">Anycast routing latency</div>
+</div>
+</div>
+<!-- Time-series Interactive Vector Chart -->
+<div class="p-6 rounded-2xl bg-graphite border border-steel mb-6">
+<div class="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-steel/60 gap-4">
+<div class="flex items-center gap-4 text-xs font-mono">
+<span class="flex items-center gap-1.5 text-porcelain font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-electric-link"></span> p95 Latency (ms)
+                  </span>
+<span class="flex items-center gap-1.5 text-ash">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Cache Hits (req/s)
+                  </span>
+<span class="flex items-center gap-1.5 text-copper-new">
+<span class="w-2.5 h-2.5 rounded-full bg-copper-new"></span> Fallback Triggered
+                  </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-carbon border border-steel text-xs font-mono text-porcelain">Cluster: Global Anycast</span>
+</div>
+</div>
+<!-- SVG Latency Curve -->
+<div class="w-full h-52 relative overflow-hidden">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 900 200">
+<defs>
+<lineargradient id="latencyGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2997ff" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#2997ff" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="cacheGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#34d399" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#34d399" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Guide Grids -->
+<line stroke="#333336" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="900" y1="40" y2="40"></line>
+<line stroke="#333336" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="900" y1="90" y2="90"></line>
+<line stroke="#333336" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="900" y1="140" y2="140"></line>
+<!-- Cache Wave -->
+<path d="M0,150 Q150,110 300,130 T600,100 T750,70 T900,90 L900,200 L0,200 Z" fill="url(#cacheGlow)"></path>
+<path d="M0,150 Q150,110 300,130 T600,100 T750,70 T900,90" stroke="#34d399" stroke-width="2"></path>
+<!-- Latency Wave -->
+<path d="M0,110 Q140,80 280,65 T560,75 T720,40 T900,55 L900,200 L0,200 Z" fill="url(#latencyGlow)"></path>
+<path d="M0,110 Q140,80 280,65 T560,75 T720,40 T900,55" stroke="#2997ff" stroke-width="2.5"></path>
+<!-- Intercept Point -->
+<circle cx="720" cy="40" fill="#2997ff" r="5"></circle>
+<circle cx="720" cy="40" fill="#ffffff" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-ash pt-3 border-t border-steel/60">
+<span>00:00:00</span>
+<span>06:00:00</span>
+<span>12:00:00</span>
+<span>18:00:00</span>
+<span class="text-emerald-400">Live (Sub-second buffer)</span>
+</div>
+</div>
+<!-- Terminal-style Live Stream Interception Log -->
+<div class="rounded-xl bg-obsidian border border-steel p-4 font-mono text-xs text-on-surface-variant space-y-1.5">
+<div class="text-slate text-[11px] pb-1 border-b border-steel/50 flex justify-between">
+<span>EVENT STREAM LOGS</span>
+<span>LEVEL: INFO / WARN</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate">[14:32:01.102]</span>
+<span class="text-emerald-400">200 OK</span>
+<span class="text-porcelain">POST /chat/completions</span>
+<span class="text-ash">→ routed to</span>
+<span class="text-tertiary">anthropic/claude-3-5-sonnet</span>
+<span class="text-slate">(118ms)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate">[14:32:02.418]</span>
+<span class="text-tertiary">CACHE_HIT</span>
+<span class="text-porcelain">POST /chat/completions</span>
+<span class="text-ash">→ vector cosine 0.991 match returned from memory</span>
+<span class="text-emerald-400">(4ms)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate">[14:32:04.880]</span>
+<span class="text-copper-new">429_INTERCEPT</span>
+<span class="text-porcelain">Upstream rate limit</span>
+<span class="text-ash">→ transparent reroute to fallback</span>
+<span class="text-secondary">openai/gpt-4o</span>
+<span class="text-emerald-400">(32ms failover recovery)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 7. INSTANT DEVELOPER CTA                   -->
+<!-- ========================================== -->
+<section class="w-full bg-graphite border-t border-steel py-20 relative overflow-hidden" id="get-started">
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[220px] bg-electric-link/20 rounded-full blur-[130px] pointer-events-none"></div>
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop relative z-10 text-center">
+<div class="max-w-3xl mx-auto rounded-[32px] bg-carbon border border-steel p-8 sm:p-12 shadow-2xl">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-graphite border border-steel text-electric-link font-mono text-xs uppercase tracking-wider mb-5">
+<span class="material-symbols-outlined text-[15px]">terminal</span> Instant Sandbox Provisioning
+            </span>
+<h2 class="font-display-sm text-[34px] sm:text-[46px] leading-tight font-semibold text-porcelain mb-3">
+              Deploy Your Proxy in 30 Seconds.
+            </h2>
+<p class="font-body-lg text-body-lg text-ash max-w-xl mx-auto mb-8">
+              No credit card required. Receive $10 in complimentary sandbox tokens to benchmark and stream Claude, GPT-4o, and DeepSeek in production.
+            </p>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary-container hover:bg-electric-link text-white font-body-md-strong text-body-md-strong transition-all shadow-[0_0_24px_rgba(0,113,227,0.4)]" href="#">
+                Generate API Key Free
+              </a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-graphite hover:bg-steel border border-steel text-porcelain font-body-md-strong text-body-md-strong transition-all" href="#">
+<span>Read Gateway Specs</span>
+<span class="material-symbols-outlined text-[16px] text-electric-link">menu_book</span>
+</a>
+</div>
+<!-- Terminal inline helper -->
+<div class="mt-8 p-3 rounded-xl bg-obsidian border border-steel/60 font-mono text-xs text-ash max-w-md mx-auto flex items-center justify-between">
+<span>npx @aihub/cli login &amp;&amp; aihub proxy start</span>
+<button class="text-electric-link hover:text-white" onclick="navigator.clipboard.writeText('npx @aihub/cli login &amp;&amp; aihub proxy start')">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- FOOTER                                     -->
+<!-- ========================================== -->
+<footer class="w-full bg-graphite border-t border-steel mt-auto">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm-strong text-label-sm-strong text-porcelain uppercase tracking-wider mb-space-xs">Gateway Engine</span>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Anycast Router</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Failover Guard</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Semantic Cache</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Rate Limiter Vault</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm-strong text-label-sm-strong text-porcelain uppercase tracking-wider mb-space-xs">Model Engines</span>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Anthropic Claude 3.5</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">OpenAI GPT-4o</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">DeepSeek R1 / V3</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Meta Llama 3.3</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm-strong text-label-sm-strong text-porcelain uppercase tracking-wider mb-space-xs">Developers</span>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Interactive Workbench</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">OpenAI SDK Wrapper</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Python SDK</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">CLI Architecture</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm-strong text-label-sm-strong text-porcelain uppercase tracking-wider mb-space-xs">Company</span>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Routing Architecture</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Network Edge Status</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Security Center</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm-strong text-label-sm-strong text-porcelain uppercase tracking-wider mb-space-xs">Legal &amp; SLAs</span>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">99.995% SLA Terms</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">Privacy &amp; Zero Retention</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">SOC 2 Type II</a>
+<a class="font-body-md text-body-md text-ash hover:text-porcelain transition-colors" href="#">HIPAA BAA</a>
+</div>
+</div>
+<div class="pt-space-md border-t border-steel flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-carbon border border-steel">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]"></span>
+<span class="font-label-sm text-label-sm text-porcelain">All 48 Edge Nodes Operational</span>
+</div>
+<span class="font-label-sm text-label-sm text-ash">© 2025 AI Hub Gateway Inc.</span>
+</div>
+<div class="flex items-center gap-space-md text-ash font-mono text-xs">
+<span>Zero Vendor Lock-in</span>
+<span class="text-steel">•</span>
+<span>San Francisco • Zurich • Tokyo</span>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- ========================================== -->
+<!-- CLIENT INTERACTIVE LOGIC                   -->
+<!-- ========================================== -->
+<script>
+    // Presets for the Live Workbench
+    const workbenchPresets = {
+      sql: {
+        text: "Optimize this SQL query & explain execution plan: SELECT u.id, count(o.id) FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE o.created_at > NOW() - INTERVAL '30 days' GROUP BY u.id HAVING count(o.id) > 5;",
+        sonnet: {
+          ttft: "118 ms",
+          tps: "84.2 tps",
+          cost: "$0.0019",
+          html: '<p class="text-slate italic">-- Rewrite using pre-filtered subquery index scan:</p><p class="text-emerald-400">WITH active_orders AS (<br/>&nbsp;&nbsp;SELECT user_id, count(id) as total<br/>&nbsp;&nbsp;FROM orders<br/>&nbsp;&nbsp;WHERE created_at &gt; NOW() - INTERVAL \'30 days\'<br/>&nbsp;&nbsp;GROUP BY user_id HAVING count(id) &gt; 5<br/>)<br/>SELECT u.id, ao.total FROM users u<br/>INNER JOIN active_orders ao ON u.id = ao.user_id;</p><p class="text-ash text-[11px]">Plan: Avoids full left join table scan; leverages composite index on (created_at, user_id). Scan cost drops ~82%.</p>'
+        },
+        gpt: {
+          ttft: "94 ms",
+          tps: "102.5 tps",
+          cost: "$0.0016",
+          html: '<p class="text-slate italic">-- Optimized INNER JOIN aggregate:</p><p class="text-secondary-fixed">SELECT o.user_id, count(o.id) AS order_volume<br/>FROM orders o<br/>WHERE o.created_at &gt; NOW() - INTERVAL \'30 DAY\'<br/>GROUP BY o.user_id<br/>HAVING count(o.id) &gt; 5;</p><p class="text-ash text-[11px]">Observation: Left join on `users` is redundant if `o.user_id` matches foreign keys. Eliminates join hash buffer.</p>'
+        }
+      },
+      code: {
+        text: "Implement an async rate-limited worker pool in Python using asyncio.Queue with backpressure and graceful SIGINT shutdown.",
+        sonnet: {
+          ttft: "132 ms",
+          tps: "88.6 tps",
+          cost: "$0.0028",
+          html: '<p class="text-slate italic"># Async Worker Pool with asyncio.Event cancellation</p><p class="text-emerald-400">class WorkerPool:<br/>&nbsp;&nbsp;def __init__(self, concurrency=10):<br/>&nbsp;&nbsp;&nbsp;&nbsp;self.queue = asyncio.Queue(maxsize=100)<br/>&nbsp;&nbsp;&nbsp;&nbsp;self.stop_event = asyncio.Event()<br/><br/>&nbsp;&nbsp;async def worker(self):<br/>&nbsp;&nbsp;&nbsp;&nbsp;while not self.stop_event.is_set():<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item = await self.queue.get()<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try: await self.process(item)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally: self.queue.task_done()</p>'
+        },
+        gpt: {
+          ttft: "101 ms",
+          tps: "98.1 tps",
+          cost: "$0.0024",
+          html: '<p class="text-slate italic"># Semaphore-governed task consumer</p><p class="text-secondary-fixed">async def run_pool(tasks, limit=10):<br/>&nbsp;&nbsp;sem = asyncio.Semaphore(limit)<br/>&nbsp;&nbsp;async def bounded(t):<br/>&nbsp;&nbsp;&nbsp;&nbsp;async with sem:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return await t()<br/>&nbsp;&nbsp;return await asyncio.gather(*(bounded(t) for t in tasks))</p>'
+        }
+      },
+      math: {
+        text: "Prove that every connected graph with n vertices and n-1 edges is a tree by structural induction.",
+        sonnet: {
+          ttft: "140 ms",
+          tps: "81.0 tps",
+          cost: "$0.0031",
+          html: '<p class="text-slate italic">Base step (n=1): 1 vertex, 0 edges is vacuously connected &amp; acyclic. Inductive step: Assume true for k. Consider G with k+1 vertices and k edges. Sum of degrees = 2k &lt; 2(k+1), hence there exists a vertex v with degree 1. Removing v yields a connected graph with k vertices and k-1 edges...</p>'
+        },
+        gpt: {
+          ttft: "110 ms",
+          tps: "95.4 tps",
+          cost: "$0.0029",
+          html: '<p class="text-slate italic">By standard tree characterization: Connected implies at least n-1 edges. If G has any cycle, removing a cycle edge leaves G connected. Continuing yields a spanning tree with n-1 edges. Since |E| = n-1 already, no edges could have been removed without disconnecting G; thus G contains no cycles.</p>'
+        }
+      }
+    };
+
+    function setWorkbenchPrompt(key) {
+      ['sql', 'code', 'math'].forEach(k => {
+        const btn = document.getElementById('prompt-btn-' + k);
+        if (k === key) {
+          btn.className = 'px-3 py-0.5 rounded-full text-xs font-mono text-porcelain bg-steel';
+        } else {
+          btn.className = 'px-3 py-0.5 rounded-full text-xs font-mono text-ash hover:text-porcelain';
+        }
+      });
+
+      const preset = workbenchPresets[key];
+      document.getElementById('workbench-input').value = preset.text;
+      
+      document.getElementById('sonnet-stream-content').innerHTML = preset.sonnet.html;
+      document.getElementById('sonnet-ttft').innerText = preset.sonnet.ttft;
+      document.getElementById('sonnet-tps').innerText = preset.sonnet.tps;
+      document.getElementById('sonnet-cost').innerText = preset.sonnet.cost;
+
+      document.getElementById('gpt-stream-content').innerHTML = preset.gpt.html;
+      document.getElementById('gpt-ttft').innerText = preset.gpt.ttft;
+      document.getElementById('gpt-tps').innerText = preset.gpt.tps;
+      document.getElementById('gpt-cost').innerText = preset.gpt.cost;
+    }
+
+    function executeDualStream() {
+      const sonnetStatus = document.getElementById('sonnet-status');
+      const gptStatus = document.getElementById('gpt-status');
+      sonnetStatus.innerText = 'Streaming (chunk 12/84)...';
+      sonnetStatus.className = 'px-2 py-0.5 rounded-full text-[11px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 animate-pulse';
+      gptStatus.innerText = 'Streaming (chunk 18/84)...';
+      gptStatus.className = 'px-2 py-0.5 rounded-full text-[11px] font-mono bg-electric-link/20 text-electric-link border border-electric-link/30 animate-pulse';
+
+      setTimeout(() => {
+        sonnetStatus.innerText = 'Stream Finished';
+        sonnetStatus.className = 'px-2 py-0.5 rounded-full text-[11px] font-mono bg-graphite border border-steel text-slate';
+        gptStatus.innerText = 'Stream Finished';
+        gptStatus.className = 'px-2 py-0.5 rounded-full text-[11px] font-mono bg-graphite border border-steel text-slate';
+      }, 1000);
+    }
+
+    function clearStream() {
+      document.getElementById('workbench-input').value = '';
+      document.getElementById('sonnet-stream-content').innerHTML = '<span class="text-ash italic">Waiting for prompt submission...</span>';
+      document.getElementById('gpt-stream-content').innerHTML = '<span class="text-ash italic">Waiting for prompt submission...</span>';
+    }
+
+    function copyStreamOutput(model) {
+      const text = model === 'sonnet' ? document.getElementById('sonnet-stream-content').innerText : document.getElementById('gpt-stream-content').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Copied ' + model + ' stream output payload to clipboard.');
+    }
+
+    function deployToProxy(modelId) {
+      alert('Model [' + modelId + '] added to your default AI Hub routing proxy configuration.');
+    }
+
+    // Dynamic Matrix by Use Case switcher
+    const matrixData = {
+      code: [
+        { name: "Claude 3.5 Sonnet", provider: "anthropic/claude-3-5-sonnet", tag: "Primary Leader", tagClass: "bg-tertiary-container/20 text-optical-yellow border-tertiary-container/30", price: "$3.00 / 1M In", metricName: "HumanEval Python", metricVal: "93.7%", width1: "93.7%", speed: "84 tps", width2: "82%", context: "200K tokens", width3: "60%" },
+        { name: "GPT-4o", provider: "openai/gpt-4o", tag: "Omni Engine", tagClass: "bg-primary-container/20 text-electric-link border-primary-container/30", price: "$2.50 / 1M In", metricName: "HumanEval Python", metricVal: "90.2%", width1: "90.2%", speed: "104 tps", width2: "95%", context: "128K tokens", width3: "45%" },
+        { name: "Llama 3.3 70B", provider: "meta/llama-3.3-70b-instruct", tag: "Open Weights Edge", tagClass: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20", price: "$0.35 / 1M In", metricName: "HumanEval Python", metricVal: "85.4%", width1: "85.4%", speed: "128 tps", width2: "100%", context: "128K tokens", width3: "45%" }
+      ],
+      reasoning: [
+        { name: "DeepSeek R1", provider: "deepseek/deepseek-r1", tag: "Reasoning Leader", tagClass: "bg-copper-new/20 text-copper-new border-copper-new/30", price: "$0.55 / 1M In", metricName: "AIME 2024 Math", metricVal: "79.8%", width1: "79.8%", speed: "62 tps", width2: "60%", context: "64K tokens", width3: "30%" },
+        { name: "o1-preview", provider: "openai/o1-preview", tag: "CoT Specialist", tagClass: "bg-primary-container/20 text-electric-link border-primary-container/30", price: "$15.00 / 1M In", metricName: "AIME 2024 Math", metricVal: "83.3%", width1: "83.3%", speed: "42 tps", width2: "45%", context: "128K tokens", width3: "45%" },
+        { name: "Claude 3.5 Sonnet", provider: "anthropic/claude-3-5-sonnet", tag: "Analytical Hybrid", tagClass: "bg-tertiary-container/20 text-optical-yellow border-tertiary-container/30", price: "$3.00 / 1M In", metricName: "AIME 2024 Math", metricVal: "78.0%", width1: "78.0%", speed: "84 tps", width2: "82%", context: "200K tokens", width3: "60%" }
+      ],
+      search: [
+        { name: "Gemini 1.5 Pro", provider: "google/gemini-1.5-pro", tag: "2M Context King", tagClass: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20", price: "$1.25 / 1M In", metricName: "Needle in Haystack", metricVal: "99.9%", width1: "99.9%", speed: "92 tps", width2: "88%", context: "2,048K tokens", width3: "100%" },
+        { name: "Claude 3.5 Sonnet", provider: "anthropic/claude-3-5-sonnet", tag: "High Precision", tagClass: "bg-tertiary-container/20 text-optical-yellow border-tertiary-container/30", price: "$3.00 / 1M In", metricName: "Needle in Haystack", metricVal: "99.6%", width1: "99.6%", speed: "84 tps", width2: "82%", context: "200K tokens", width3: "60%" },
+        { name: "Llama 3.1 405B", provider: "meta/llama-3.1-405b", tag: "Massive Open", tagClass: "bg-primary-container/20 text-electric-link border-primary-container/30", price: "$2.00 / 1M In", metricName: "Needle in Haystack", metricVal: "98.1%", width1: "98.1%", speed: "55 tps", width2: "55%", context: "128K tokens", width3: "45%" }
+      ],
+      vision: [
+        { name: "GPT-4o Vision", provider: "openai/gpt-4o", tag: "Multimodal #1", tagClass: "bg-primary-container/20 text-electric-link border-primary-container/30", price: "$2.50 / 1M In", metricName: "MMMU Multi-discipline", metricVal: "69.1%", width1: "69.1%", speed: "104 tps", width2: "95%", context: "128K tokens", width3: "45%" },
+        { name: "Claude 3.5 Sonnet", provider: "anthropic/claude-3-5-sonnet", tag: "Diagram & Chart", tagClass: "bg-tertiary-container/20 text-optical-yellow border-tertiary-container/30", price: "$3.00 / 1M In", metricName: "MMMU Multi-discipline", metricVal: "68.3%", width1: "68.3%", speed: "84 tps", width2: "82%", context: "200K tokens", width3: "60%" },
+        { name: "Gemini 1.5 Flash", provider: "google/gemini-1.5-flash", tag: "Ultra Low Cost", tagClass: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20", price: "$0.075 / 1M In", metricName: "MMMU Multi-discipline", metricVal: "56.8%", width1: "56.8%", speed: "160 tps", width2: "100%", context: "1,024K tokens", width3: "80%" }
+      ]
+    };
+
+    function switchMatrixTab(cat) {
+      ['code', 'reasoning', 'search', 'vision'].forEach(c => {
+        const btn = document.getElementById('tab-' + c);
+        if (c === cat) {
+          btn.className = 'matrix-tab px-4 py-1.5 rounded-full text-porcelain bg-steel font-label-sm-strong text-xs whitespace-nowrap transition-all';
+        } else {
+          btn.className = 'matrix-tab px-4 py-1.5 rounded-full text-ash hover:text-porcelain font-label-sm text-xs whitespace-nowrap transition-all';
+        }
+      });
+
+      const cards = matrixData[cat];
+      const container = document.getElementById('matrix-cards-container');
+      container.innerHTML = cards.map((c, i) => `
+        <div class="rounded-[28px] bg-carbon border border-steel p-6 flex flex-col justify-between hover:border-slate transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-0.5 rounded-full ${c.tagClass} font-mono text-[11px]">${c.tag}</span>
+              <span class="font-mono text-xs text-ash">${c.price}</span>
+            </div>
+            <h3 class="font-title-md text-title-md text-porcelain mb-1">${c.name}</h3>
+            <p class="font-mono text-xs text-slate mb-4">${c.provider}</p>
+            
+            <div class="space-y-3 p-4 rounded-2xl bg-graphite border border-steel mb-6">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono mb-1">
+                  <span class="text-ash">${c.metricName}</span>
+                  <span class="text-porcelain font-bold">${c.metricVal}</span>
+                </div>
+                <div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+                  <div class="h-full bg-electric-link rounded-full" style="width: ${c.width1}"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] font-mono mb-1">
+                  <span class="text-ash">Throughput Speed</span>
+                  <span class="text-porcelain font-bold">${c.speed}</span>
+                </div>
+                <div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-400 rounded-full" style="width: ${c.width2}"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] font-mono mb-1">
+                  <span class="text-ash">Context Window</span>
+                  <span class="text-porcelain font-bold">${c.context}</span>
+                </div>
+                <div class="w-full h-1.5 bg-steel rounded-full overflow-hidden">
+                  <div class="h-full bg-tertiary rounded-full" style="width: ${c.width3}"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 pt-4 border-t border-steel/60">
+            <button class="w-full py-2.5 rounded-full ${i === 0 ? 'bg-primary-container hover:bg-electric-link text-white' : 'bg-graphite hover:bg-steel border border-steel text-porcelain'} font-body-md-strong text-xs transition-all flex items-center justify-center gap-1.5" onclick="deployToProxy('${c.provider}')">
+              <span class="material-symbols-outlined text-[15px]">rocket_launch</span> Deploy to Proxy
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body></html>
